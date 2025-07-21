@@ -96,13 +96,16 @@ const UserSearch = () => {
       {data && <UserCard user={data} />}
 
       {recentUsers.length > 0 && (
-        <RecentSearches
-          users={recentUsers}
-          onSelect={(username) => {
-            setUsername(username);
-            setSubmittedUsername(username);
-          }}
-        />
+        <>
+          <RecentSearches
+            users={recentUsers}
+            onSelect={(username) => {
+              setUsername(username);
+              setSubmittedUsername(username);
+            }}
+          />
+          <button onClick={() => setRecentUsers([])}>Clear</button>
+        </>
       )}
     </>
   );
