@@ -26,6 +26,13 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 300px) {
+  .container {
+    min-width: 250px;
+    padding: 1rem;
+  }
+}
+
 h1 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
