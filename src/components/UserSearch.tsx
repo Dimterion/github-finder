@@ -63,28 +63,40 @@ const UserSearch = () => {
           />
 
           {showSuggestions && suggestions?.length > 0 && (
-            <SuggestionDropdown
-              suggestions={suggestions}
-              show={showSuggestions}
-              onSelect={(selected) => {
-                setUsername(selected);
-                setShowSuggestions(false);
+            <>
+              <button
+                type="button"
+                className="clear-btn"
+                onClick={() => {
+                  setUsername("");
+                  setShowSuggestions(false);
+                }}
+              >
+                &times;
+              </button>
+              <SuggestionDropdown
+                suggestions={suggestions}
+                show={showSuggestions}
+                onSelect={(selected) => {
+                  setUsername(selected);
+                  setShowSuggestions(false);
 
-                if (submittedUsername !== selected) {
-                  setSubmittedUsername(selected);
-                } else {
-                  refetch();
-                }
+                  if (submittedUsername !== selected) {
+                    setSubmittedUsername(selected);
+                  } else {
+                    refetch();
+                  }
 
-                setRecentUsers((prev) => {
-                  const updated = [
-                    selected,
-                    ...prev.filter((user) => user !== selected),
-                  ];
-                  return updated.slice(0, 5);
-                });
-              }}
-            />
+                  setRecentUsers((prev) => {
+                    const updated = [
+                      selected,
+                      ...prev.filter((user) => user !== selected),
+                    ];
+                    return updated.slice(0, 5);
+                  });
+                }}
+              />
+            </>
           )}
         </div>
         <button type="submit">Search</button>

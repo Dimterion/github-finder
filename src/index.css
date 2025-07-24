@@ -74,6 +74,23 @@ button {
   transition: background-color 0.2s ease;
 }
 
+.clear-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-45%);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #555;
+  padding: 0;
+}
+
+.clear-btn:hover {
+  opacity: 0.9;
+}
+
 /* User Card */
 .user-card {
   background-color: #fff;
