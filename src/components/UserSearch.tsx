@@ -66,7 +66,7 @@ const UserSearch = () => {
             <>
               <button
                 type="button"
-                className="clear-btn"
+                className="clearSearch-btn"
                 onClick={() => {
                   setUsername("");
                   setShowSuggestions(false);
@@ -116,7 +116,12 @@ const UserSearch = () => {
               setSubmittedUsername(username);
             }}
           />
-          <button onClick={() => setRecentUsers([])}>Clear</button>
+          <button
+            className="clearRecentSearch-btn"
+            onClick={() => setRecentUsers([])}
+          >
+            Clear recent searches
+          </button>
         </>
       )}
     </>

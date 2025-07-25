@@ -74,7 +74,11 @@ button {
   transition: background-color 0.2s ease;
 }
 
-.clear-btn {
+button:hover {
+  opacity: 0.9;
+}
+
+.clearSearch-btn {
   position: absolute;
   right: 0.5rem;
   top: 50%;
@@ -85,10 +89,6 @@ button {
   cursor: pointer;
   color: #555;
   padding: 0;
-}
-
-.clear-btn:hover {
-  opacity: 0.9;
 }
 
 /* User Card */
@@ -202,6 +202,10 @@ button {
   font-size: 1rem;
 }
 
+.clearRecentSearch-btn {
+  width: 100%;
+}
+
 /* Suggestions Dropdown */
 .dropdown-wrapper {
   position: relative;
@@ -251,44 +255,4 @@ button {
   gap: 0.75rem;
   margin-bottom: 1rem;
   align-items: center;
-}
-
-/* Follow Button */
-.follow-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  color: #ffffff;
-  background-color: #22c55e;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-}
-
-.follow-btn.following {
-  background-color: #ef4444; /* 🔥 RED for following (unfollow state) */
-}
-
-.follow-btn:hover {
-  opacity: 0.9;
-}
-
-.follow-btn.following:hover {
-  background-color: #dc2626; /* Darker red on hover */
-}
-
-.follow-btn:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-
-.follow-icon {
-  font-size: 1.2rem;
 }

@@ -8,7 +8,7 @@ type RecentSearchesProps = {
 };
 
 const RecentSearches = ({ users, onSelect }: RecentSearchesProps) => {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
 
   return (
     <div className="recent-searches">
@@ -19,12 +19,15 @@ const RecentSearches = ({ users, onSelect }: RecentSearchesProps) => {
       <ul>
         {users.map((user) => (
           <li key={user}>
-            <button onClick={() => onSelect(user)} onMouseEnter={() => {
-              queryClient.prefetchQuery({
-                queryKey: ['users', user],
-                queryFn: () => fetchGithubUser(user)
-              })
-            }}>
+            <button
+              onClick={() => onSelect(user)}
+              onMouseEnter={() => {
+                queryClient.prefetchQuery({
+                  queryKey: ["users", user],
+                  queryFn: () => fetchGithubUser(user),
+                });
+              }}
+            >
               <FaUser className="user-icon" />
               {user}
             </button>
